@@ -1,0 +1,25 @@
+///
+/// SASS Animation mixin
+///
+/// @author andreimocanu
+///
+/// @param {String} $duration
+/// @param {String} $transition
+/// @param {String} $property
+///
+/// @example
+///   .selector {
+///     @include anim(0.2s, linear);
+///   }
+///
+
+@mixin anim($duration: 0.3s, $transition: ease-in-out, $property: all) {
+    @if $duration == 'none' {
+        -webkit-transition: none;
+        transition: none;
+    }
+    @else {
+        -webkit-transition: $property $duration $transition;
+        transition: $property $duration $transition;
+    }
+}
